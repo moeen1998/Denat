@@ -6,6 +6,7 @@
 
   #0062cc => 007bff
   #bd2130 => dc3545
+  #41B47E => 51cc99
 
 */
 }
@@ -40,9 +41,9 @@ html{
   box-sizing: border-box;
 }
 body{
-  min-height: 200vh;
-  font-family: 'Exo', sans-serif;
+  font-family: 'Reem Kufi Ink', sans-serif;
   text-transform: capitalize;
+  overflow-x: hidden;
 }
 .color{
   color: var(--main-color)!important;
@@ -92,13 +93,26 @@ button:focus{
 }
 p{
   line-height: 1.5;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
+}
+ul{
+  list-style: none;
 }
 /* End General Settings */
 
 
+/* Start Nav Bar */
+
+.nav{
+  box-shadow: 0px 0px 15px #ccc;
+}
+
+/* End Nav Bar */
 
 /* Start Slider + Animation */
+.slider{
+  overflow: hidden;
+}
 .context {
   width: 100%;
   position: absolute;
@@ -106,11 +120,13 @@ p{
   padding: 2%;
   transform: translateY(-50%);
   z-index: 2;
+  overflow: hidden;
 }
 .area{
   background: var(--main-color);  
   width: 100%;
   height:calc(100vh - 56px);
+  
 }
 .circles{
   width: 100%;
@@ -203,3 +219,123 @@ p{
 }
 /* End Slider + Animation */
 
+/* Start Offers Section */
+.line{
+  position: relative;
+}
+.line::after{
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  background-color: var(--main-color);
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%);
+}
+.team .child{
+  transition: .5s;
+}
+.team .child img{width: 100%;}
+.team .child:hover{
+  transform: scale(1.1,1.1);
+}
+@media( max-width: 576px ){
+  .child:hover{
+    transform: scale(1,1);
+  }
+}
+/* End Offers Section */
+
+/* Start testimonial Section */
+
+.testimonial{
+  background-image: url(../imgs/dental-inspirations-image-9edd5a.jpg);
+  background-size: cover;
+  background-position: center top;
+  filter: opacity(80%);
+}
+.testimonial li{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #000; 
+  margin-bottom: -250px;
+  cursor: pointer;
+}
+.testimonial .child{
+  transition: .5s;
+}
+.testimonial .child:hover{
+  transform: translateY(-12px);
+  cursor: pointer;
+}
+@media( max-width: 576px ){
+  .testimonial{
+    background-image: url(../imgs/2020-10-14.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* End testimonial Section */
+
+
+/* Start After And Before Section */
+
+.afterandbefore .image{
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 200px !important;
+}
+.afterandbefore .image img { 
+  width: 100%;
+  height: 100%;
+}
+
+.afterandbefore .image::before
+{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 1s;
+  opacity: 0;
+  background-size: cover;
+  background-position: center left;
+  cursor: pointer;
+}
+
+.afterandbefore .image.img1::before{
+  bottom: 0;
+  right: 0;
+}
+
+.afterandbefore .image.img1:hover::before{
+  opacity: 1;
+  background-image: url(../imgs/after1.png);
+}
+
+.afterandbefore .image.img2:hover::before{
+  width: 100%;
+  opacity: 1;
+  background-image: url(../imgs/after4.png);
+  
+}
+
+.afterandbefore .image.img3:hover::before{
+  width: 100%;
+  opacity: 1;
+  background-image: url(../imgs/after3.jpg);
+}
+/* End After And Before Section */
+
+/* Start Footer */
+
+.footer{
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+/* End Footer */
