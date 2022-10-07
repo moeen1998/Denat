@@ -22,8 +22,8 @@ gear.addEventListener('click',(e)=>{
 // ===============> the part of colors <===============
 
 //  see if there is default value for color that user select before if there is one will set it as default
-let defultColor = localStorage.getItem('color') ?? false;
-let defultHoverColor = localStorage.getItem('hover-color') ?? false;
+let defultColor = localStorage.getItem('colorsection') ?? false;
+let defultHoverColor = localStorage.getItem('hover-colorsection') ?? false;
 let colors = document.querySelectorAll('.color-section span');
 let slideinterval;
 
@@ -58,8 +58,8 @@ colors.forEach((el)=>{
     e.target.classList.add('selected');
     
     // save the color in local storage
-    localStorage.setItem('color',e.target.dataset.color)
-    localStorage.setItem('hover-color',e.target.dataset.second)
+    localStorage.setItem('colorsection',e.target.dataset.color)
+    localStorage.setItem('hover-colorsection',e.target.dataset.second)
     
     // change root color in the document object
     document.documentElement.style.setProperty('--main-color',e.target.dataset.color)
@@ -73,7 +73,7 @@ colors.forEach((el)=>{
 // ===============> the part of font Sizes <===============
 
 //  see if there is default value for font size that user select before if there is one will set it as default
-let defultsize = localStorage.getItem('size') ?? false;
+let defultsize = localStorage.getItem('sizesectio') ?? false;
 let sizes = document.querySelectorAll('.font-section span');
 
 // if there is any default font size
@@ -100,14 +100,13 @@ sizes.forEach((el)=>{
   el.addEventListener("click", (e)=>{
 
     // remove bordered class from old one 
-    console.log(e.target.parentElement.querySelector('.bordered'))
     e.target.parentElement.querySelector('.bordered').classList.remove('bordered');
     
     // set bordered class to the new selected size
     e.target.classList.add('bordered');
     
     // save font-size in local storage
-    localStorage.setItem('size',e.target.dataset.size)
+    localStorage.setItem('sizesectio',e.target.dataset.size)
     
     // change root font-size in the document object
     document.documentElement.style.setProperty('--main-size',e.target.dataset.size)
