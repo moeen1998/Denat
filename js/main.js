@@ -32,7 +32,7 @@ if(defultColor){
 
   // set these default color to the root 
   document.documentElement.style.setProperty('--main-color',defultColor)
-  document.documentElement.style.setProperty('--main-color-hover',defultHoverColor)
+  document.documentElement.style.setProperty('--hover-color',defultHoverColor)
 
   // remove selected class from all colors and add the selected class to the selected one
   colors.forEach((el)=>{
@@ -63,7 +63,7 @@ colors.forEach((el)=>{
     
     // change root color in the document object
     document.documentElement.style.setProperty('--main-color',e.target.dataset.color)
-    document.documentElement.style.setProperty('--main-color-hover',e.target.dataset.second)
+    document.documentElement.style.setProperty('--hover-color',e.target.dataset.second)
   })
 })
 
